@@ -4,6 +4,10 @@ import './App.css';
 
 class App extends Component {
   render() {
+    fetch('http://localhost:8080/')
+      .then( results => results.json() )
+      .then( data => console.log(data) )
+
     return (
       <div className="App">
         <header className="App-header">
