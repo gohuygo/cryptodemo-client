@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Modal from './components/Modal.js';
 
 class App extends Component {
-  render() {
-
+  signIn = () => {
     fetch('http://localhost:8080/authenticate', {
       method: 'POST',
       headers: {
@@ -17,7 +17,9 @@ class App extends Component {
     })
     .then( results => results.json() )
     .then( data => console.log(data) )
+  }
 
+  render() {
     return (
       <div className="App">
         <header className="App-header">
@@ -27,6 +29,10 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <Modal show={true} handleClose={true}>
+          <p>Modal</p>
+          <p>Data</p>
+        </Modal>
       </div>
     );
   }
