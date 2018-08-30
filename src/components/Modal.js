@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const ModalBody = styled.section`
-  position:fixed;
+  position: fixed;
   background: white;
   width: 80%;
   height: auto;

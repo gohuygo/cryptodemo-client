@@ -4,6 +4,17 @@ import './App.css';
 import Modal from './components/Modal.js';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      signInModalOpen: true
+    }
+  }
+
+  closeSignupModal = () => {
+    this.setState({signInModalOpen: false})
+  }
+
   signIn = () => {
     fetch('http://localhost:8080/authenticate', {
       method: 'POST',
@@ -29,7 +40,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Modal show={true} handleClose={true}>
+        <Modal show={this.state.signInModalOpen} handleClose={this.closeSignupModal}>
           <p>Modal</p>
           <p>Data</p>
         </Modal>
