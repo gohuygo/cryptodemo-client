@@ -4,9 +4,19 @@ import './App.css';
 
 class App extends Component {
   render() {
-    fetch('http://localhost:8080/')
-      .then( results => results.json() )
-      .then( data => console.log(data) )
+
+    fetch('http://localhost:8080/authenticate', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify({
+        'Name': 'Huy',
+      })
+    })
+    .then( results => results.json() )
+    .then( data => console.log(data) )
 
     return (
       <div className="App">
@@ -22,4 +32,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
