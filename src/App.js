@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Modal from './components/Modal.js';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import './App.css'
+import Modal from './components/Modal.js'
 
 class App extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class App extends Component {
     }
   }
 
-  closeSignupModal = () => {
+  closeSignInModal = () => {
     this.setState({signInModalOpen: false})
   }
 
@@ -40,7 +40,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Modal show={this.state.signInModalOpen} handleClose={this.closeSignupModal}>
+        <Modal show={this.state.signInModalOpen} handleClose={this.closeSignInModal}>
           <p>Modal</p>
           <p>Data</p>
         </Modal>
